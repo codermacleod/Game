@@ -9,7 +9,6 @@ public class Game {
     private ArrayList<String> wordList = new ArrayList<String>(Arrays.asList("Volvo", "BMW", "Ford", "Mazda"));
     private String wordToGuess;
     private String alteredWordToGuess;
-
     private StringBuilder newAlteredWordToGuess = new StringBuilder();
     private int counter = 10;
     private String letterGuess;
@@ -41,6 +40,10 @@ public class Game {
     }
 
     public String getWordToGuess() {
+        return wordToGuess;
+    }
+
+    public String getAlteredWordToGuess() {
         Random rand = new Random();
         int randomNum = rand.nextInt(0, wordList.size());
         wordToGuess = wordList.get(randomNum);
