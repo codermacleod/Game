@@ -16,7 +16,7 @@ public class Main {
             //Get letter guess from user input:
             String letterGuess = letter.nextLine();
             game.setLetterGuess(letterGuess);
-            game.compareWord(game.getLetterGuess());
+            System.out.println(game.compareWord(game.getLetterGuess()));
         }
     }
 }

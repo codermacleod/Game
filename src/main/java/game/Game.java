@@ -9,6 +9,8 @@ public class Game {
     private ArrayList<String> wordList = new ArrayList<String>(Arrays.asList("Volvo", "BMW", "Ford", "Mazda"));
     private String wordToGuess;
     private String alteredWordToGuess;
+
+    private StringBuilder newAlteredWordToGuess = new StringBuilder();
     private int counter = 10;
     private String letterGuess;
 
@@ -43,6 +45,7 @@ public class Game {
         int randomNum = rand.nextInt(0, wordList.size());
         wordToGuess = wordList.get(randomNum);
         alteredWordToGuess = wordToGuess.charAt(0) + "_".repeat(wordToGuess.length() - 1);
+        newAlteredWordToGuess.append(alteredWordToGuess);
         return alteredWordToGuess;
     }
 
@@ -50,28 +53,17 @@ public class Game {
         // counter down by one
         counter--;
         // does wordToGuess contain letterGuess
-        if (wordToGuess.contains(letterGuess)){
+        if (wordToGuess.contains(letterGuess)) {
+            //get index to change
+            int indexToReplace = wordToGuess.indexOf(letterGuess);
 
-            for (int i = 0; i < wordToGuess.length(); i++){
-                
+            for (int i = 0; i < wordToGuess.length(); i++) {
+                if (wordToGuess.substring(i, i+1).equals(letterGuess)){
+                    newAlteredWordToGuess.replace(i,i+1, letterGuess);
+                }
             }
-        // If contains == true, change alteredWordToGuess
-
-        return alteredWordToGuess;
+            return newAlteredWordToGuess.toString();
         }
-
-
-
-//        if (letterGuess == null){
-//
-//            counter--;
-//            return firstWordToGuess;
-//        }
-//        else {
-//            counter--;
-//            System.out.println("This is the Else!!!");
-//            System.out.println("This is the letter guess: "+ letterGuess);
-//            return alteredWordToGuess;
-//        }
-
+        return alteredWordToGuess;
+    }
 }
