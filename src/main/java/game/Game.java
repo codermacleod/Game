@@ -49,6 +49,10 @@ public class Game {
         return alteredWordToGuess;
     }
 
+    public StringBuilder getNewAlteredWordToGuess() {
+        return newAlteredWordToGuess;
+    }
+
     public String compareWord(String letterGuess) {
         // counter down by one
         counter--;
@@ -64,6 +68,6 @@ public class Game {
             }
             return newAlteredWordToGuess.toString();
         }
-        return alteredWordToGuess;
+        return newAlteredWordToGuess.toString();
     }
 }

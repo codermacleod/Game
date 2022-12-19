@@ -12,6 +12,10 @@ public class Main {
         System.out.println("The first word to guess is: " + game.getWordToGuess());
 
         while (game.getCounter() > 0) {
+            if ("Volvo".equals(game.getNewAlteredWordToGuess().toString())){
+                System.out.println("Breaking Bad!");
+                break;
+            }
             System.out.println("You have " + game.getCounter() + " attempts to guess the word.");
             //Get letter guess from user input:
             String letterGuess = letter.nextLine();
