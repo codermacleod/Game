@@ -1,11 +1,20 @@
 import game.Game;
+import game.WordChooser;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 public class GameTest {
     @Test
-    public void testRandomGetsWordFromWordList() {
-        Game game = new Game();
-        assertEquals(true, game.getWordList().contains("Volvo"));
+    public void testGetsWordToGuessWithRandomWord() {
+        WordChooser mockedChooser = mock(WordChooser.class);
+        when(mockedChooser.getRandomWordFromDictionary()).thenReturn("DEVELOPER");
+
+        Game game = new Game(mockedChooser);
+
+        assertEquals(game.getHiddenWord().toString(), "D________");
     }
     @Test
     public void testGetsInitialRemainingAttempts(){

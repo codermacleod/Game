@@ -3,21 +3,18 @@ package game;
 public class Game {
 
     private StringBuilder hiddenWord = new StringBuilder();
-//    private ArrayList<String> wordList = new ArrayList<String>(Arrays.asList("Volvo", "BMW", "Ford", "Mazda"));
     private String wordToGuess;
-//    private String alteredWordToGuess;
-    
     private int attempts = 10;
     private String letterGuess;
-
+    WordChooser wordChooser = new WordChooser();
     public Game() {
-        WordChooser wordChooser = new WordChooser();
         this.wordToGuess = wordChooser.getRandomWordFromDictionary();
     }
-//    public Game(String wordToGuess) {
-//        this.wordToGuess = wordToGuess;
-//    }
-//    public Game(String wordToGuess, String letterGuess) {
+    public Game(WordChooser mockedChooser) {
+        this.wordToGuess = mockedChooser.getRandomWordFromDictionary();
+    }
+
+    //    public Game(String wordToGuess, String letterGuess) {
 //        this.wordToGuess = wordToGuess;
 //        this.letterGuess = letterGuess;
 //    }
@@ -32,21 +29,19 @@ public class Game {
         this.attempts = attempts;
     }
 
-    public String getLetterGuess() {
-        return letterGuess;
-    }
-
     public void setLetterGuess(String letterGuess) {
         this.letterGuess = letterGuess.toUpperCase();
+    }
+    public String getLetterGuess() {
+        return letterGuess;
     }
 
     public String getWordToGuess() {
         return wordToGuess;
     }
 
-
     public StringBuilder getHiddenWord() {
-        //Add first letter:
+        //First setup of hidden word:
         if (hiddenWord.length() == 0) {
             hiddenWord.append(getWordToGuess().charAt(0));
             //Add underscores:

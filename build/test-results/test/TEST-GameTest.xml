@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="GameTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-28T10:55:49" hostname="MASTUDENT-Daniel-Macleod-R117V327VK.local" time="0.083">
+<testsuite name="GameTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-28T14:26:05" hostname="UNKNOWN" time="0.166">
   <properties/>
-  <testcase name="testGetsInitialRemainingAttempts()" classname="GameTest" time="0.083"/>
-  <system-out><![CDATA[Empty Game Constructor
-]]></system-out>
+  <testcase name="testGetsWordToGuessWithRandomWord()" classname="GameTest" time="0.166"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
