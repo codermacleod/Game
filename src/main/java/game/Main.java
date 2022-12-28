@@ -18,7 +18,7 @@ public class Main {
             }
             System.out.println("You have " + game.getAttempts() + " attempts to guess the word.");
             //Get letter guess from user input:
-            String letterGuess = letter.nextLine();
+            char letterGuess = letter.nextLine().toUpperCase().charAt(0);
             game.setLetterGuess(letterGuess);
             System.out.println(game.compareWord(game.getLetterGuess()));
         }
