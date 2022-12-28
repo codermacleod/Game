@@ -5,10 +5,11 @@ public class GameTest {
     @Test
     public void testRandomGetsWordFromWordList() {
         Game game = new Game();
-        assertEquals(true, game.getWordList().contains(game.getWordToGuess()));
+        assertEquals(true, game.getWordList().contains("Volvo"));
     }
-//    @Test public void testGetsWordToGuess() {
-//        Game makersGame = new Game("MAKERS");
-//        assertEquals("MAKERS", makersGame.getWordToGuess());
-//        }
+    @Test
+    public void testGetsInitialRemainingAttempts(){
+        Game game = new Game();
+        assertEquals(10,game.getAttempts());
+    }
 }
