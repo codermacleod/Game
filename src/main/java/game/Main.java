@@ -11,9 +11,13 @@ public class Main {
         System.out.println("Welcome to the Word Guessing Game!");
         System.out.println("The first word to guess is: " + game.getHiddenWord());
 
-        while (game.getAttempts() > 0) {
+        while (true) {
             if (game.getWordToGuess().equals(game.getHiddenWord().toString())){
                 System.out.printf("You are simply awesome!\nYou guessed the word, '%s' correctly!\n",game.getHiddenWord());
+                break;
+            }
+            if (game.getAttempts() == 0){
+                System.out.println("You're out of guesses!");
                 break;
             }
             System.out.println("You have " + game.getAttempts() + " attempts to guess the word.");

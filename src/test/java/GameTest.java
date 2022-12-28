@@ -29,6 +29,7 @@ public class GameTest {
         Game game = new Game(mockedChooser);
 
         assertEquals(game.guessLetter('K'), true);
+        assertEquals(game.compareWord('K'), "M_K___");
     }
     @Test public void testGuessLetterWrong() {
         WordChooser mockedChooser = mock(WordChooser.class);
@@ -37,5 +38,6 @@ public class GameTest {
         Game game = new Game(mockedChooser);
 
         assertEquals(game.guessLetter('O'), false);
+        assertEquals(game.compareWord('O'), "M_____");
     }
 }

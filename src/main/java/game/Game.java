@@ -55,6 +55,8 @@ public class Game {
     }
 
     public String compareWord(char letterGuess) {
+        //Call getHiddenWord() to set initial state of hiddenWord:
+        getHiddenWord();
         // does wordToGuess contain letterGuess
         if ((wordToGuess.contains(String.valueOf(letterGuess))) && !guessedLetters.contains(letterGuess)) {
             // counter down by one
