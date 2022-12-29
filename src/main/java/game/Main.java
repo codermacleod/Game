@@ -21,8 +21,10 @@ public class Main {
                 break;
             }
             System.out.println("You have " + game.getAttempts() + " attempts to guess the word.");
+            System.out.printf("Choose a letter: ");
             //Get letter guess from user input:
             char letterGuess = letter.nextLine().toUpperCase().charAt(0);
+
             game.setLetterGuess(letterGuess);
             System.out.println(game.compareWord(game.getLetterGuess()));
         }

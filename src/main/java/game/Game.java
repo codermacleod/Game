@@ -84,4 +84,5 @@ public class Game {
     public boolean guessLetter(char letterGuess){
         return wordToGuess.contains(String.valueOf(letterGuess));
     }
+
 }

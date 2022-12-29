@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="GameTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-28T16:47:23" hostname="UNKNOWN" time="0.188">
+<testsuite name="GameTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-29T12:15:27" hostname="MASTUDENT-Daniel-Macleod-R117V327VK.local" time="0.185">
   <properties/>
-  <testcase name="testGuessLetterWrong()" classname="GameTest" time="0.188"/>
-  <system-out><![CDATA[Unlucky!
-]]></system-out>
+  <testcase name="testShouldLoseGameIfNoAttemptsLeft()" classname="GameTest" time="0.185"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

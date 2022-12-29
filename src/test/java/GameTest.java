@@ -40,4 +40,38 @@ public class GameTest {
         assertEquals(game.guessLetter('O'), false);
         assertEquals(game.compareWord('O'), "M_____");
     }
+
+    @Test public void testShouldLoseGameIfNoAttemptsLeft(){
+        WordChooser mockedChooser = mock(WordChooser.class);
+        when(mockedChooser.getRandomWordFromDictionary()).thenReturn("MAKERS");
+
+        Game game = new Game(mockedChooser);
+        for (int i = 0; i < 10; i++) {
+            assertEquals(game.guessLetter('O'), false);
+        }
+    }
+    @Test public void testIsWon() {
+        WordChooser mockedChooser = mock(WordChooser.class);
+        when(mockedChooser.getRandomWordFromDictionary()).thenReturn("TEA");
+
+        Game game = new Game(mockedChooser);
+        game.compareWord('T');
+        game.compareWord('E');
+        game.compareWord('A');
+
+        assertEquals(game.getHiddenWord().toString(), "TEA");
+    }
+
+    @Test public void testIsWonWithSpecialWord() {
+        WordChooser mockedChooser = mock(WordChooser.class);
+        when(mockedChooser.getRandomWordFromDictionary()).thenReturn("COOL");
+
+        Game game = new Game(mockedChooser);
+        game.compareWord('C');
+        game.compareWord('O');
+        game.compareWord('L');
+
+        assertEquals(game.getHiddenWord().toString(), "COOL");
+    }
+
 }
